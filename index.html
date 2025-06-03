@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda DevGames</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icono en pestaña -->
+  <link rel="icon" href="img/favicon.png" type="image/png">
+
+  <!-- Font Awesome para iconos -->
+  <script src="https://kit.fontawesome.com/a2b0c12345.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="telon telon-izquierdo"></div>
+    <div class="telon telon-derecho"></div>
+    <div class="logo-container">
+      <img src="png/dev games.png" alt="DevGames Logo" class="logo">
+      <h1>DevGames</h1>
+    </div>
+  </div>
+
+  <!-- Modal de políticas de privacidad -->
+  <div id="modal-privacidad" class="modal">
+    <div class="modal-content">
+      <h2>Políticas de Privacidad</h2>
+      <p><strong>DevGames</strong> utiliza cookies y otras tecnologías para mejorar tu experiencia. Al continuar navegando, aceptas nuestras <a href="privacidad.html" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">condiciones de privacidad</a>.</p>
+      <div class="modal-buttons">
+        <button id="aceptar" class="btn-aceptar">Aceptar</button>
+        <button id="rechazar" class="btn-rechazar">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de registro -->
+  <div id="modal-register" class="modal">
+    <div class="modal-content">
+      <h2>Regístrate</h2>
+      <form id="form-register">
+        <input type="text" name="name" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-primario">Crear cuenta</button>
+      </form>
+      <button class="btn-close" id="close-register">&times;</button>
+    </div>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/51991269948" target="_blank" class="btn-whatsapp" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="icon-whatsapp">
+  </a>
+
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo"><i class="fas fa-gamepad"></i> DevGames</div>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button id="menu-toggle" class="hamburger" aria-label="Menú">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="nav-links" class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Quiénes somos</a>
+      <a href="#desarrolladores">Desarrolladores</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" id="btn-login" class="btn-login">Iniciar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Modal de inicio de sesión -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <button id="close-login" class="btn-close" aria-label="Cerrar">&times;</button>
+      <h2>Iniciar sesión</h2>
+      <form id="form-login">
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-primario">Iniciar sesión</button>
+      </form>
+      <p>¿No tienes cuenta? <a href="#" id="btn-register">Regístrate aquí</a></p>
+      <p><a href="privacidad.html" target="_blank" rel="noopener noreferrer">Condiciones de privacidad y términos</a></p>
+    </div>
+  </div>
+
+  <!-- Sección hero -->
+  <section id="inicio" class="hero" data-media="png/assasin1.jpg">
+    <div class="hero-text">
+      <h1>Tus juegos, nuestra pasión</h1>
+      <p>Descubre títulos de Ubisoft, Bethesda, Naughty Dog, Capcom, ¡y más!</p>
+      <a href="#catalogo" class="btn-primario">Explorar catálogo</a>
+    </div>
+  </section>
+
+  <!-- Quiénes somos -->
+  <section id="sobre" class="sobre">
+    <h2>Quiénes somos</h2>
+    <p>Somos <strong>CodeCraft Studio</strong>, un equipo apasionado por los videojuegos y la tecnología. Nuestro objetivo es ofrecerte la mejor experiencia en DevGames.</p>
+    <div class="equipo">
+      <article class="card-persona">
+        <img src="png/yo.jpg" alt="José Manuel G.C" class="foto-equipo">
+        <h3>José Manuel G.C</h3>
+        <p>Full-Stack Developer, especialista en Inteligencia Artificial y arquitecto de software.</p>
+      </article>
+      <article class="card-persona">
+        <img src="png/sebastian.jpg" alt="Sebastián R." class="foto-equipo">
+        <h3>Sebastián R.</h3>
+        <p>Diseñador UX/UI, amante de los videojuegos retro y creador de experiencias visuales únicas.</p>
+      </article>
+      <article class="card-persona">
+        <img src="png/juan jp.jpg" alt="Juan J." class="foto-equipo">
+        <h3>Juan J.</h3>
+        <p>Especialista en seguridad informática, fanático de los RPG y estratega en DevOps.</p>
+      </article>
+    </div>
+
+    <!-- Cajas atractivas para el texto adicional -->
+    <div class="info-cajas">
+      <div class="info-caja">
+        <h3>Innovación</h3>
+        <p>Nos enfocamos en crear soluciones tecnológicas únicas para mejorar la experiencia de nuestros usuarios.</p>
+      </div>
+      <div class="info-caja">
+        <h3>Creatividad</h3>
+        <p>Diseñamos experiencias visuales y funcionales que destacan por su originalidad y calidad.</p>
+      </div>
+      <div class="info-caja">
+        <h3>Calidad</h3>
+        <p>Garantizamos productos y servicios de alta calidad, adaptados a las necesidades de nuestros clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desarrolladores -->
+  <section id="desarrolladores" class="desarrolladores">
+    <h2>Explora por desarrollador</h2>
+    <p>Descubre los mejores títulos de tus desarrolladores favoritos.</p>
+    <div class="grid-devs">
+      <a class="card-dev" href="https://www.ubisoft.com" target="_blank">
+        <img src="png/ubisos.png" alt="Ubisoft">
+        <span>Ubisoft</span>
+      </a>
+      <a class="card-dev" href="https://bethesda.net" target="_blank">
+        <img src="png/bethesda.jpeg" alt="Bethesda">
+        <span>Bethesda</span>
+      </a>
+      <a class="card-dev" href="https://www.naughtydog.com" target="_blank">
+        <img src="png/Naughty-Dog-Acquisition_News_FI.jpg" alt="Naughty Dog">
+        <span>Naughty Dog</span>
+      </a>
+      <a class="card-dev" href="https://www.capcom.com" target="_blank">
+        <img src="png/capcom.jpg" alt="Capcom">
+        <span>Capcom</span>
+      </a>
+      <a class="card-dev" href="https://www.activision.com" target="_blank">
+        <img src="png/Activision.jpg" alt="Activision">
+        <span>Activision</span>
+      </a>
+      <a class="card-dev" href="https://www.fromsoftware.jp" target="_blank">
+        <img src="img/fromsoftware.jpg" alt="FromSoftware">
+        <span>FromSoftware</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section id="catalogo" class="catalogo">
+    <h2>Catálogo de lanzamientos</h2>
+    <p>Explora los últimos lanzamientos y encuentra tus juegos favoritos.</p>
+    <div class="grid-juegos">
+      <article class="card-juego">
+        <img src="png/mirage.jpg" alt="Assassin’s Creed">
+        <h3>Assassin’s Creed Mirage</h3>
+        <p class="precio">S/ 159.90</p>
+        <button class="btn-secundario" onclick="addToCart('Assassin’s Creed Mirage', 159.90)">Añadir al carrito</button>
+      </article>
+      <article class="card-juego">
+        <img src="png/elden ring.avif" alt="Elden Ring">
+        <h3>Elden Ring</h3>
+        <p class="precio">S/ 179.90</p>
+        <button class="btn-secundario" onclick="addToCart('Elden Ring', 179.90)">Añadir al carrito</button>
+      </article>
+    </div>
+    <button class="btn-primario" onclick="goToCheckout()">Comprar</button>
+  </section>
+
+  <!-- Ofertas -->
+  <section id="ofertas" class="ofertas">
+    <h2>Ofertas de la semana</h2>
+    <p>Aprovecha nuestras ofertas exclusivas en los mejores títulos.</p>
+    <div class="slider">
+      <div class="slide activo">
+        <img src="png/Ubisoft-uvejuegos-portada.jpg" alt="Oferta 1">
+        <p>Hasta 60 % en títulos Ubisoft</p>
+      </div>
+      <div class="slide">
+        <img src="png/bethesda.jpeg" alt="Oferta 2">
+        <p>Paquetes Bethesda desde S/ 99</p>
+      </div>
+      <div class="slide">
+        <img src="png/resident-evil-6.jpg" alt="Oferta 3">
+        <p>Trilogía Resident Evil al 2×1</p>
+      </div>
+      <!-- Flechas -->
+      <button class="prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes preguntas? Envíanos un mensaje y te responderemos lo antes posible.</p>
+    <form id="form-contacto" class="form-contacto">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit" class="btn-primario">Enviar mensaje</button>
+    </form>
+    <div class="redes">
+      <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://t.me" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2025 DevGames • Hecho con pasión por José Manuel G.C, Sebastián R. y Juan J.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="app.js" defer></script>
+  <script>
+    // Mostrar el modal al cargar la página
+    window.onload = function() {
+      const modal = document.getElementById('modal-privacidad');
+      modal.style.display = 'block';
+
+      // Botón aceptar
+      document.getElementById('aceptar').onclick = function() {
+        modal.style.display = 'none';
+        alert('Gracias por aceptar nuestras políticas de privacidad.');
+      };
+
+      // Botón rechazar
+      document.getElementById('rechazar').onclick = function() {
+        modal.style.display = 'none';
+        alert('Has rechazado nuestras políticas de privacidad. Algunas funciones pueden no estar disponibles.');
+      };
+    };
+  </script>
+
+  <!-- Estilos adicionales para el modal -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .modal-content h2 {
+      font-size: 1.5rem; /* Tamaño más pequeño para el título */
+      color: #222; /* Color oscuro para mejor contraste */
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 0.9rem; /* Tamaño más pequeño para el párrafo */
+      color: #444; /* Color gris oscuro para mejor visibilidad */
+      font-weight: normal;
+      line-height: 1.4; /* Espaciado ajustado */
+      margin-bottom: 15px; /* Espaciado inferior */
+    }
+
+    .modal-buttons {
+      margin-top: 15px; /* Espaciado ajustado para los botones */
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .btn-primario {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-secundario {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-primario:hover, .btn-secundario:hover {
+      opacity: 0.9;
+    }
+
+    /* Estilos para el botón flotante de WhatsApp */
+    .btn-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #20b358;
+    }
+
+    .btn-whatsapp i {
+      font-size: 24px;
+    }
+
+    .btn-aceptar {
+      background-color: #000; /* Fondo negro */
+      color: #fff; /* Texto blanco */
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .btn-rechazar {
+      background-color: #000; /* Fondo negro */
+      color: #fff; /* Texto blanco */
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .btn-aceptar:hover {
+      background-color: #333; /* Fondo gris oscuro al pasar el mouse */
+    }
+
+    .btn-rechazar:hover {
+      background-color: #333; /* Fondo gris oscuro al pasar el mouse */
+    }
+
+    /* Estilos para la pantalla de carga (Splash Screen) */
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    /* Ocultar el contenido principal inicialmente */
+    .contenido {
+      display: none;
+    }
+  </style>
+</body>
+</html>
+
